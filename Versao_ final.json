@@ -1,0 +1,1934 @@
+{
+  "name": "Versão final",
+  "nodes": [
+    {
+      "parameters": {
+        "maxItems": 10
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        288,
+        144
+      ],
+      "id": "e4b947b2-4583-44f7-9045-bc258d61dd0c",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "maxItems": 10
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        304,
+        272
+      ],
+      "id": "ed33ec26-3935-4426-bb01-344697fb5698",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "info",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "90ff6ae1-b861-4de3-80c8-8a5ce723bbcf"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Info"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1fb24a10-07d2-4d26-b538-f025d799c945",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "agendar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Agendar"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2001453b-fd2a-4084-b8b0-2f10fcd5debe",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "remarcar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Remarcar"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "9e29a306-40db-4316-8727-bf4571c89843",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "cancelar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Req. Cancelar"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "96f3f9ef-3e0f-4d2f-b8b4-35d1b188b27a",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "dr_primeiro",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Dr.XXXX"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dedd898f-4d85-4300-a988-d690dacfa273",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "dr_segundo",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Dra.XXXXX"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4a6a8eab-af7d-44c9-9588-e8a360cd59bf",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "finalizar_",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "marcar horário"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "90bd910b-99bb-4003-975b-73a6d466d3db",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "apagar_",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "apagar consulta da planilha"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6f6208ed-3086-453e-b988-a8cda5f47c2d",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "reagendar_",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "reagendar"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -512,
+        112
+      ],
+      "id": "914e61eb-092c-411e-97e0-51f9c96cd01d",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "agenda",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "medico",
+              "lookupValue": "Dr.XXXXX"
+            },
+            {
+              "lookupColumn": "status",
+              "lookupValue": "Disponível"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        112,
+        192
+      ],
+      "id": "f5a69bce-e3b7-4265-8685-8856e5a79dd8",
+      "name": "Get row(s) in sheet2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "agenda",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "medico",
+              "lookupValue": "Dra.XXXXX"
+            },
+            {
+              "lookupColumn": "status",
+              "lookupValue": "Disponível"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -48,
+        256
+      ],
+      "id": "f4905686-7087-4c9e-9506-7e09f1354515",
+      "name": "Get row(s) in sheet4",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Edit Fields').first().json.chat_id }}",
+        "text": "={{ `🏥 *Informações da Clínica XXXXX*  \n\nAqui estão os dados que você solicitou:  \n⏰ *Horário de Funcionamento:* Segunda a Sexta: XXh às XXh  \n📍 *Localização:* XXXXXXXXXXXXXX  \n📞 *Contato:* (XX) 99999-9999  \n\nEstamos à disposição para cuidar da sua saúde.\n\n👇 *Toque no botão abaixo para abrir o mapa:*` }}",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Abrir no maps",
+                    "additionalFields": {
+                      "url": "https://maps.app.goo.gl/gai1KYEKhmWThfej9"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -384,
+        -144
+      ],
+      "id": "003cef0b-051f-4287-8326-3d701d228cf1",
+      "name": "Informações",
+      "webhookId": "85b1b874-6a65-49c1-a262-19676829eb74",
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Edit Fields').first().json.chat_id }}",
+        "text": "={{\n`✅ *Agendamento Confirmado com Sucesso!*\n\nSua consulta foi marcada. Seguem os detalhes:\n\n📅 *Dia:* ${$json.data}\n⏰ *Horário:* ${$json.hora}\n👨‍⚕️ *Médico:* ${$json.medico}\n👤 *Paciente:* ${$json.paciente_nome}\n🆔*id da consulta:* ${$json.id_agenda}\n\nObrigado por escolher nossa clínica! Para novas ações, clique em \"/start\" e retorne ao nosso menu `\n}}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        400
+      ],
+      "id": "58d4ef94-e840-4254-80d9-6a8484aadbb8",
+      "name": "Send a text message1",
+      "webhookId": "479a177e-03a6-492c-be82-e6ae6682fb89",
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "agenda",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_agenda",
+              "lookupValue": "={{ $('Edit Fields').first().json.message.replace('finalizar_', '') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        96,
+        400
+      ],
+      "id": "5ec518c6-7126-48a9-8e81-a7d20f769e94",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Edit Fields').first().json.chat_id }}",
+        "text": "Por favor selecione o médico de sua preferência: 👨‍⚕️",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Dr. XXXXX",
+                    "additionalFields": {
+                      "callback_data": "dr_primeiro"
+                    }
+                  },
+                  {
+                    "text": "Dra.XXXXX",
+                    "additionalFields": {
+                      "callback_data": "dr_segundo"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -144,
+        -80
+      ],
+      "id": "efbac57a-93b5-438d-a84e-b267c0bf8525",
+      "name": "dia/médico",
+      "webhookId": "4d1b947e-c075-451d-b6a1-75ede9c134fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 262341835,
+          "mode": "list",
+          "cachedResultName": "Pacientes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=262341835"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "chat_id",
+              "lookupValue": "={{ $('Edit Fields').first().json.chat_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -224,
+        400
+      ],
+      "id": "7331c09e-ac11-43e1-8470-d421ee00a4c9",
+      "name": "ler paciente(cadastro)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "agenda",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_agenda": "={{ $('Edit Fields').first().json.message.replace('finalizar_', '') }}",
+            "chat_id": "={{ $json.chat_id }}",
+            "paciente_email": "={{ $json.email }}",
+            "status": "Ocupado",
+            "paciente_nome": "={{ $json.nome }}"
+          },
+          "matchingColumns": [
+            "id_agenda"
+          ],
+          "schema": [
+            {
+              "id": "id_agenda",
+              "displayName": "id_agenda",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "data",
+              "displayName": "data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "hora",
+              "displayName": "hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "medico",
+              "displayName": "medico",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paciente_nome",
+              "displayName": "paciente_nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paciente_email",
+              "displayName": "paciente_email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -48,
+        400
+      ],
+      "id": "6629e053-7d67-44bf-a661-755bd36895ac",
+      "name": "salvar consulta",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "agenda",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "status",
+              "lookupValue": "=Ocupado"
+            },
+            {
+              "lookupColumn": "paciente_nome",
+              "lookupValue": "={{ $('Telegram Trigger').first().json.callback_query.from.first_name }} {{ $('Telegram Trigger').first().json.callback_query.from.last_name || '' }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -240,
+        80
+      ],
+      "id": "bd2ead6b-fbb5-4290-8f68-d19b064dd96c",
+      "name": "Get row(s) in sheet3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Edit Fields').first().json.chat_id }}",
+        "text": "=❌ Consulta Cancelada com Sucesso!\n\n👤 Paciente:{{ $json.paciente_nome }}\n🆔 ID do Agendamento:{{ $json.id_agenda }}\n📅 Data:{{ $json.data }}\n⏰ Horário:{{ $json.hora }}\n\nSeu horário foi liberado.\n\n⚠️ *Observação:* Para um novo agendamento, clique em \"/start\", retorne ao nosso menu em nosso chat e faça o seu novo agendamento!",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -128,
+        528
+      ],
+      "id": "aaeb1279-b9e0-4374-87b9-3cf2b9f1c996",
+      "name": "mensagem de confirmação do cancelamento",
+      "webhookId": "1c3d248a-7710-4db6-a468-ad08762e3228",
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "agenda",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "status": "Disponível",
+            "id_agenda": "={{ $json.message.replace('reagendar_', '') }}",
+            "paciente_nome": "={{ \"\" }}",
+            "paciente_email": "={{ \"\" }}",
+            "chat_id": "={{ \"\" }}"
+          },
+          "matchingColumns": [
+            "id_agenda"
+          ],
+          "schema": [
+            {
+              "id": "id_agenda",
+              "displayName": "id_agenda",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "data",
+              "displayName": "data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "hora",
+              "displayName": "hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "medico",
+              "displayName": "medico",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paciente_nome",
+              "displayName": "paciente_nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paciente_email",
+              "displayName": "paciente_email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -624,
+        640
+      ],
+      "id": "1443d978-49e9-4aca-bae8-fa25d3443455",
+      "name": "apagar dados da planilha1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Edit Fields').first().json.chat_id }}",
+        "text": "✅ Agendamento anterior cancelado! Toque abaixo para escolher seu novo horário:",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "📅 Ver Novos Horários",
+                    "additionalFields": {
+                      "callback_data": "agendar"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -448,
+        640
+      ],
+      "id": "dc83e438-fd93-4d78-89c7-77dfa0e2f676",
+      "name": "mensagem de confirmação de cancelamento e guia para novo agendamento",
+      "webhookId": "d062cd26-9920-4f1e-a4cc-5e565e11ff0e",
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "agenda",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_agenda",
+              "lookupValue": "={{ $json.message.split('_')[1] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -288,
+        528
+      ],
+      "id": "004706b9-b06c-4dc3-89b6-cf0cbbd51c7a",
+      "name": "buscar dados para o cancelamento",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message",
+          "callback_query"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1296,
+        272
+      ],
+      "id": "f72a534d-9953-44ac-86c2-7f86df0f0061",
+      "name": "Telegram Trigger",
+      "webhookId": "6e348d82-7139-42ca-8951-590a4f6f90e0",
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "446dd853-5ff8-431b-9a11-fa72002ae570",
+              "leftValue": "={{ $json.message ? $json.message.text : '' }}",
+              "rightValue": "/start",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1152,
+        272
+      ],
+      "id": "58074d28-0dcf-4b64-a092-8e887622a333",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "16694d6c-0f22-456b-ae38-4f5194ada81c",
+              "name": "message",
+              "value": "={{ $json.callback_query ? $json.callback_query.data : $json.message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "a1bd3fc1-6760-400a-aa49-e19dabc94f88",
+              "name": "chat_id",
+              "value": "={{ $json.callback_query ? $json.callback_query.message.chat.id : $json.message.chat.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1040,
+        416
+      ],
+      "id": "94e485c0-63af-4e5e-9814-3f6608a3e218",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "20fc4275-b7cc-494f-b664-09e8cb413368",
+              "leftValue": "={{ $json.email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -912,
+        144
+      ],
+      "id": "53494b9f-71d9-4265-8c7f-9bc52f2daf30",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "chatId": "={{$('Telegram Trigger').item.json.message.chat.id}}",
+        "text": "={{ `👋 Olá, *${$('Telegram Trigger').first().json.message.chat.first_name}*!  \nNotei que é o seu primeiro acesso por aqui. Para agendarmos sua consulta, precisamos fazer um cadastro rápido. \n📝  Por favor, digite o seu *melhor e-mail* abaixo: _(Exemplo: nome@gmail.com)_` }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -816,
+        -48
+      ],
+      "id": "5d64226f-8b22-4084-a9c3-9540f2b0a4ec",
+      "name": "requisição de email",
+      "webhookId": "419aad6d-4942-477a-85df-c702367d01b9",
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9fdf7f2e-c914-4f86-bf4b-9d86660d887b",
+              "leftValue": "={{ $json.message }}",
+              "rightValue": "@",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -864,
+        416
+      ],
+      "id": "d85547c1-c770-4017-8f97-fecbb3b80f68",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 262341835,
+          "mode": "list",
+          "cachedResultName": "Pacientes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=262341835"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "chat_id",
+              "lookupValue": "={{ $('Telegram Trigger').first().json.message.chat.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1008,
+        16
+      ],
+      "id": "e038c43e-dec4-48e7-ab3a-87243d67cbb2",
+      "name": "checar se o email existe",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 262341835,
+          "mode": "list",
+          "cachedResultName": "Pacientes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=262341835"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('Edit Fields').first().json.chat_id }}",
+            "nome": "={{ ( $('Telegram Trigger').first().json.message?.chat?.first_name || $('Telegram Trigger').first().json.callback_query?.from?.first_name ) }} {{ ( $('Telegram Trigger').first().json.message?.chat?.last_name || $('Telegram Trigger').first().json.callback_query?.from?.last_name || '' ) }}",
+            "email": "={{ $('Edit Fields').item.json.message }}"
+          },
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome",
+              "displayName": "nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -720,
+        176
+      ],
+      "id": "aff82a7b-6e74-4a08-b807-008a9a5f8bba",
+      "name": "criar cadastro/salvar novo email",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{$('Telegram Trigger').item.json.message.chat.id}}",
+        "text": "={{ `👋 Olá, *${$('Telegram Trigger').first().json.message.chat.first_name}*!  \nSeja bem-vindo(a) ao atendimento digital da *Clínica XXXX*. \n\n🏥  Eu sou seu assistente virtual e estou aqui para agilizar o seu dia. Por favor, selecione abaixo como posso te ajudar hoje:` }}",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "1.Local",
+                    "additionalFields": {
+                      "callback_data": "info"
+                    }
+                  },
+                  {
+                    "text": "2.Agendar consultas",
+                    "additionalFields": {
+                      "callback_data": "agendar"
+                    }
+                  },
+                  {
+                    "text": "3.Remarcar consultas",
+                    "additionalFields": {
+                      "callback_data": "remarcar"
+                    }
+                  },
+                  {
+                    "text": "4.Cancelar consulta",
+                    "additionalFields": {
+                      "callback_data": "cancelar"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -576,
+        -32
+      ],
+      "id": "083ff4a4-2923-4487-8721-adae7ffb419f",
+      "name": "mensagem para menu",
+      "webhookId": "c3b8b0e3-d7bc-4c78-91f2-6d87d9c0680b",
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Edit Fields').first().json.chat_id }}",
+        "text": "Escolha um dos horários e datas acima...",
+        "replyMarkup": "={{ $json.meus_botoes }}",
+        "forceReply": {},
+        "replyKeyboardOptions": {},
+        "replyKeyboardRemove": {},
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        672,
+        208
+      ],
+      "id": "d938acf6-0382-4e3f-9730-a99c1580e329",
+      "name": "Exibindo datas disponíveis1",
+      "webhookId": "65b04d53-269d-40c8-b8c5-dfce0c7d4968",
+      "executeOnce": false,
+      "credentials": {
+        "telegramApi": {
+          "id": "9ZEshAbrzzXrU2YH",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.telegram.org/bot8136494605:AAH4efpV1tmGj8AODeN3FqvqpxWhk8gfOdI/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n(() => {\n  // 1. Prepara os botões\n  const botoes = $input.all().map(item => {\n    const data = item.json.data || item.json.Data || \"Dia\";\n    const hora = item.json.hora || item.json.Hora || \"Hora\";\n    // Pega o ID ÚNICO da linha (certifique-se que a coluna na planilha é 'id_agenda')\n    const id = item.json.id_agenda; \n\n    return [\n      {\n        // O paciente VÊ a Data e Hora\n        text: `📅 ${data} às ${hora}`,\n        // O sistema RECEBE o ID (ex: finalizar_4)\n        callback_data: `finalizar_${id}`\n      }\n    ];\n  });\n\n  // 2. Retorna o pacote\n  return {\n    \"chat_id\": $('Edit Fields').first().json.chat_id,\n    \"text\": \"📅 Aqui estão os horários disponíveis:\",\n    \"reply_markup\": {\n      \"inline_keyboard\": botoes\n    }\n  };\n})()\n}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        528,
+        208
+      ],
+      "id": "d0edfa0b-ac8f-42d4-94d4-0258b2f7eddb",
+      "name": "HTTP Request2",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('ler paciente(cadastro)').item.json.email }}",
+        "subject": "Confirmação de Consulta - Clínica X",
+        "emailType": "text",
+        "message": "={{ $json.result.text }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        496,
+        400
+      ],
+      "id": "4749fb36-8157-4679-b8c4-d3e9e13e8957",
+      "name": "Send a message2",
+      "webhookId": "3d5405d1-b400-4fa8-9f7a-6ec306ce0626",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "HIaB7dFgBq4rqYNm",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8136494605:AAH4efpV1tmGj8AODeN3FqvqpxWhk8gfOdI/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n(() => {\n  const items = $input.all();\n  // Verifica se veio do botão remarcar (minúsculo para garantir)\n  const origem = $('Telegram Trigger').first().json.callback_query.data.toLowerCase();\n  \n  // Define o prefixo do comando\n  let prefixo = \"\";\n  if (origem.includes(\"remarcar\")) {\n      prefixo = \"reagendar_\"; \n  } else {\n      prefixo = \"apagar_\";\n  }\n\n  // Validação\n  if (items.length === 0 || !items[0].json.id_agenda) {\n     return {\n       \"chat_id\": $('Edit Fields').first().json.chat_id,\n       \"text\": \"🚫 Não encontrei nenhum agendamento ativo.\"\n     }\n  }\n\n  // Cria os botões\n  const botoes = items.map(item => {\n    const data = item.json.data || \"Data\";\n    const hora = item.json.hora || \"Hora\";\n    const id = item.json.id_agenda;\n\n    return [\n      {\n        \"text\": `❌ Cancelar ${data} às ${hora}`,\n        // Agora o prefixo muda no início! (ex: reagendar_4 ou apagar_4)\n        \"callback_data\": `${prefixo}${id}`\n      }\n    ];\n  });\n\n  return {\n    \"chat_id\": $('Edit Fields').first().json.chat_id,\n    \"text\": \"⚠️ Selecione o agendamento:\",\n    \"reply_markup\": {\n      \"inline_keyboard\": botoes\n    }\n  };\n})()\n}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        0,
+        80
+      ],
+      "id": "793ab9c8-2983-4a5c-b70a-affa6357dca4",
+      "name": "HTTP Request",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8",
+          "mode": "list",
+          "cachedResultName": "agenda_consultas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "agenda",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pEQKZXwjingnwXin6beUezyOiWsVI46fImwbykN7I_8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "status": "Disponível",
+            "id_agenda": "={{ $('buscar dados para o cancelamento').item.json.id_agenda }}",
+            "paciente_nome": "={{ \"\" }}",
+            "paciente_email": "={{ \"\" }}",
+            "chat_id": "={{ \"\" }}"
+          },
+          "matchingColumns": [
+            "id_agenda"
+          ],
+          "schema": [
+            {
+              "id": "id_agenda",
+              "displayName": "id_agenda",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "data",
+              "displayName": "data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "hora",
+              "displayName": "hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "medico",
+              "displayName": "medico",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paciente_nome",
+              "displayName": "paciente_nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paciente_email",
+              "displayName": "paciente_email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        272,
+        528
+      ],
+      "id": "e24473db-1b2f-43ca-928e-205af43c78b0",
+      "name": "apagar dados da planilha2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pBoTwvu8fZl7XlIV",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('buscar dados para o cancelamento').item.json.paciente_email }}",
+        "subject": " Cancelamento de Consulta - Clínica X",
+        "emailType": "text",
+        "message": "={{ $json.result.text }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        112,
+        528
+      ],
+      "id": "090dc1ba-347f-491b-94c0-22a4cf35419c",
+      "name": "Send a message",
+      "webhookId": "3d5405d1-b400-4fa8-9f7a-6ec306ce0626",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "HIaB7dFgBq4rqYNm",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Informações",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "dia/médico",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s) in sheet3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s) in sheet3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s) in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s) in sheet4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ler paciente(cadastro)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "buscar dados para o cancelamento",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "apagar dados da planilha1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet4": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message1": {
+      "main": [
+        [
+          {
+            "node": "Send a message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ler paciente(cadastro)": {
+      "main": [
+        [
+          {
+            "node": "salvar consulta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "salvar consulta": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mensagem de confirmação do cancelamento": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "apagar dados da planilha1": {
+      "main": [
+        [
+          {
+            "node": "mensagem de confirmação de cancelamento e guia para novo agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "buscar dados para o cancelamento": {
+      "main": [
+        [
+          {
+            "node": "mensagem de confirmação do cancelamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "checar se o email existe",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "requisição de email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "mensagem para menu",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "criar cadastro/salvar novo email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "checar se o email existe": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "criar cadastro/salvar novo email": {
+      "main": [
+        [
+          {
+            "node": "mensagem para menu",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Exibindo datas disponíveis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "apagar dados da planilha2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "2e270614-50a7-4ec2-b8bb-cf9320246a12",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b16eb4982c84afc8b9befe3492f7fbb49a42ca7a21379ee3dc73d8e9693348e5"
+  },
+  "id": "Spl7YJTji1lxIcte",
+  "tags": []
+}
